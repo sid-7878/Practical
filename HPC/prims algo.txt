@@ -1,0 +1,32 @@
+prims algo
+
+def prim_mst(graph):
+    V = len(graph)
+    selected = [False] * V
+    no_edge = 0
+    selected[0] = True
+
+    while (no_edge < V - 1):
+        minimum = float('inf')
+        x = 0
+        y = 0
+        for m in range(V):
+            if selected[m]:
+                for n in range(V):
+                    if ((not selected[n]) and graph[m][n]):  
+                        if minimum > graph[m][n]:
+                            minimum = graph[m][n]
+                            x = m
+                            y = n
+        print(str(x) + "-" + str(y) + ":" + str(graph[x][y]))
+        selected[y] = True
+        no_edge += 1
+
+# Example graph represented as an adjacency matrix
+graph = [[0, 2, 0, 6, 0],
+         [2, 0, 3, 8, 5],
+         [0, 3, 0, 0, 7],
+         [6, 8, 0, 0, 9],
+         [0, 5, 7, 9, 0]]
+
+prim_mst(graph)
