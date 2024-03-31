@@ -1,0 +1,15 @@
+use push and addToSet expression.
+
+1. addToSet:
+Syntax:
+{$addToSet:<expression>}
+Source Code:
+use examdb
+db.student.aggregate([{$group:{_id:"$Class",AddToSet:{$addToSet:"$Score"}}}])
+
+2. Push:
+Syntax:
+{$push:<expression>}
+Source Code:
+use examdb
+db.student.aggregate([{$group:{_id:"$Class",Push:{$push:"$Score"}}}])

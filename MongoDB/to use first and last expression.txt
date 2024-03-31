@@ -1,0 +1,15 @@
+to use first and last expression
+
+1. First:
+Syntax:
+{$first:<expression>}
+Source Code:
+use examdb
+db.student.aggregate([{$group:{_id:"$Class",Score:{$first:"$Score"}}}])
+
+2. Last:
+Syntax:
+{$last:<expression>}
+Source Code:
+use examdb
+db.student.aggregate([{$group:{_id:"$Class",Score:{$last:"$Score"}}}])

@@ -1,0 +1,368 @@
+Basic jQuery
+
+
+a. jQuery Basic, jQuery Events
+jQuery Basic:
+Code:
+index.html
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+$("button").click(function(){
+$("p").hide();
+});
+});
+</script>
+</head>
+<body>
+<h2>This is a heading</h2>
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+<button>Click me to hide paragraphs</button>
+</body>
+</html>
+Output:
+
+jQuery Events:
+1) Click Event:
+Code:
+index.html
+<html>
+<head>
+<title>The jQuery Example</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js">
+</script>
+<script>
+$(document).ready(function() {
+$("div").bind("click", function(event) {
+alert("Event type is " + event.type);
+alert("Target " + event.target.innerHTML);
+});
+});
+</script>
+<style>
+.div{margin:10px;padding:12px; border:2px solid #666; width:60px;}
+</style>
+</head>
+<body>
+<p>Click on any square below to see the result:</p>
+<div class = "div" style = "background-color:blue;">ONE</div>
+<div class = "div" style = "background-color:green;">TWO</div>
+<div class = "div" style = "background-color:red;">THREE</div>
+</body>
+</html>
+Output:
+
+2. DoubleClick Event
+Code:
+index.html
+<html>
+<head>
+<title>The jQuery Example</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js">
+</script>
+<script>
+$(document).ready(function() {
+$("div").dblclick(function(){
+$(this).hide();
+});
+});
+</script>
+<style>
+.div{margin:10px;padding:12px; border:2px solid #666; width:60px;}
+</style>
+</head>
+<body>
+<p>Double Click on any square below to see the result:</p>
+<div class = "div" style = "background-color:blue;">ONE</div>
+<div class = "div" style = "background-color:green;">TWO</div>
+<div class = "div" style = "background-color:red;">THREE</div>
+</body>
+</html>
+Output:
+
+3. Mouseleave Event:
+Code:
+index.html
+<html>
+<head>
+<title>The jQuery Example</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js">
+</script>
+<script>
+$(document).ready(function() {
+$(".div").mouseleave(function(){
+alert("Event type is " + event.type);
+alert("Target " + event.target.innerHTML);
+});
+});
+</script>
+<style>
+.div{margin:10px;padding:12px; border:2px solid #666; width:60px;}
+</style>
+</head>
+<body>
+<p>Click on any square below to see the result:</p>
+<div class = "div" style = "background-color:blue;">ONE</div>
+<div class = "div" style = "background-color:green;">TWO</div>
+<div class = "div" style = "background-color:red;">THREE</div>
+</body>
+</html>
+Output:
+
+b. jQuery Selectors, jQuery Hide and Show effects
+jQuery Selectors:
+1. Name Selector
+Code:
+index.html
+<html>
+<head>
+<title>The jQuery Example</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js">
+</script>
+<script>
+$(document).ready(function() {
+/* This would select all the divisions */
+$("div").css("background-color","yellow");
+});
+</script>
+</head>
+<body>
+<div class = "big" id="div1">
+<p>This is first division of the DOM.</p>
+</div>
+<div class = "medium" id="div2">
+<p>This is second division of the DOM.</p>
+</div>
+<div class = "small" id="div3">
+<p>This is third division of the DOM.</p>
+</div>
+</body>
+</html>
+Output:
+
+2. ID Selector
+Code:
+index.html
+<html>
+<head>
+<title>The jQuery Example</title>
+<script
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js">
+</script>
+<script>
+$(document).ready(function() {
+/* This would select 2nd division by id */
+$("#div2").css("background-color","yellow");
+});
+</script>
+</head>
+<body>
+<div class = "big" id="div1">
+<p>This is first division of the DOM.</p>
+</div>
+<div class = "medium" id="div2">
+<p>This is second division of the DOM.</p>
+</div>
+<div class = "small" id="div3">
+<p>This is third division of the DOM.</p>
+</div>
+</body>
+</html>
+Output:
+
+3. Class Selector
+Code:
+index.html
+<html>
+<head>
+<title>The jQuery Example</title>
+<script
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js">
+</script>
+<script>
+$(document).ready(function() {
+/* This would select 3rd division by class name */
+$(".small").css("background-color","yellow");
+});
+</script>
+</head>
+<body>
+<div class = "big" id="div1">
+<p>This is first division of the DOM.</p>
+</div>
+<div class = "medium" id="div2">
+<p>This is second division of the DOM.</p>
+</div>
+<div class = "small" id="div3">
+<p>This is third division of the DOM.</p>
+</div>
+</body>
+</html>
+Output:
+
+4. Universal Selector
+Code:
+index.html
+<html>
+<head>
+<title>The jQuery Example</title>
+<script
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js">
+</script>
+<script>
+$(document).ready(function() {
+/* This would select all the divisions */
+$("*").css("background-color","yellow");
+});
+</script>
+</head>
+<body>
+<div class = "big" id="div1">
+<p>This is first division of the DOM.</p>
+</div>
+<div class = "medium" id="div2">
+<p>This is second division of the DOM.</p>
+</div>
+<div class = "small" id="div3">
+<p>This is third division of the DOM.</p>
+</div>
+</body>
+</html>
+Output:
+
+5. Multiple Selector:
+Code:
+index.html:
+<html>
+<head>
+<title>The jQuery Example</title>
+<script
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js">
+</script>
+<script>
+$(document).ready(function() {
+/* This would select multiple divisions */
+$(".small, #div1").css("background-color","yellow");
+});
+</script>
+</head>
+<body>
+<div class = "big" id="div1">
+<p>This is first division of the DOM.</p>
+</div>
+<div class = "medium" id="div2">
+<p>This is second division of the DOM.</p>
+</div>
+<div class = "small" id="div3">
+<p>This is third division of the DOM.</p>
+</div>
+</body>
+</html>
+Output:
+
+jQuery Hide and Show Effects:
+Code:
+index.html
+<html>
+<head>
+<title>The jQuery Example</title>
+<script
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js">
+</script>
+<script>
+$(document).ready(function() {
+$("#show").click(function(){
+$(".mydiv").show(1000);
+});
+});
+});
+$("#hide").click(function(){
+$(".mydiv").hide(1000);
+</script>
+<style>
+.mydiv{ margin:10px; padding:12px; border:2px solid #666; width:100px;
+height:100px; }
+</style>
+</head>
+<body>
+<div class = "mydiv"> This is a SQUARE. </div>
+<input id = "hide" type = "button" value = "Hide" />
+<input id = "show" type = "button" value = "Show" />
+</body>
+</html>
+Output:
+
+c. jQuery fading effects, jQuery Sliding effects
+jQuery Fading Effects:
+Code:
+index.html
+<html>
+<head>
+<title>The jQuery Example</title>
+<script
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js">
+</script>
+<script>
+$(document).ready(function() {
+$("#fadeout").click(function(){
+$("h1").fadeOut(2000, function () {
+alert("Animation is completed");
+});
+});
+$("#fadein").click(function(){
+$("h1").fadeIn(2000, function () {
+alert("Animation is completed");
+});
+});
+});
+</script>
+</head>
+<body align = "center">
+<div>
+<h1>The Text is Visible. Click Fade Out Button to Hide Text.</h1>
+<input id = "fadeout" type = "button" value = "Fade Out" />
+<input id = "fadein" type = "button" value = "Fade In" />
+</div>
+</body>
+</html>
+Output:
+
+jQuery Sliding Effects:
+Code:
+index.html
+<html>
+<head>
+<title>The jQuery Example</title>
+<script
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js">
+</script>
+<script>
+$(document).ready(function() {
+$("#slideup").click(function(){
+$("h1").slideUp("slow", function(){
+alert("The slide-up effect is completed.");
+});
+});
+$("#slidedown").click(function(){
+$("h1").slideDown("slow", function(){
+alert("The slide-down effect is completed.");
+});
+});
+});
+</script>
+</head>
+<body align = "center">
+<div>
+<h1>This is a Demo of Sliding Effect.</h1>
+<input id = "slideup" type = "button" value = "Slide Up" />
+<input id = "slidedown" type = "button" value = "Slide Down" />
+</div>
+</body>
+</html>
+Output:
+

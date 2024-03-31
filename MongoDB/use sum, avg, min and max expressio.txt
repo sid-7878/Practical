@@ -1,0 +1,25 @@
+use sum, avg, min and max expression
+
+
+Syntax:
+Sum
+{$sum:[<expression1>,<expression>…]}
+Avg
+{$avg:[<expression1>…]}
+Min
+{$min:[<expression1>…]}
+Max
+{$Max:[<expression1>…]}
+Source Code:
+Sum
+use examdb
+db.student.aggregate([{$group:{_id:"$Class",sum:{$sum:"$Score"}}}])
+Avg
+use examdb
+db.student.aggregate([{$group:{_id:"$Class",Average:{$avg:"$Score"}}}])
+Min
+use examdb
+db.student.aggregate([{$group:{_id:"$Class",Minimum:{$min:"$Score"}}}])
+Max
+use examdb
+db.student.aggregate([{$group:{_id:"$Class",Maximum:{$max:"$Score"}}}])

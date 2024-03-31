@@ -1,0 +1,10 @@
+create and drop database.
+Practical No.: 1
+MongoDB Basics
+a. Write a MongoDB query to create and drop database.
+Syntax:
+Create – use database_name
+Drop – db.dropDatabase()
+Source Code:
+use examdb
+db.dropDatabase()

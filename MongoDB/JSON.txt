@@ -1,0 +1,81 @@
+JSON
+
+a. Creating JSON
+Code:
+index.html
+<html>
+<head>
+<title>The JSON Example</title>
+</head>
+<body>
+<p>Access a JSON object using dot notation:</p>
+<p id = "demo"></p>
+<script>
+var myObj, x;
+myObj = {
+"name":"John",
+"age":30,
+"car":null
+};
+x = myObj.name;
+document.getElementById("demo").innerHTML = x;
+</script>
+</body>
+</html>
+Output:
+
+b. Parsing JSON
+Code:
+index.html
+<html>
+<head>
+<title>The JSON Example</title>
+</head>
+<body>
+<p>Modify a JSON object</p>
+<h1>Before Modification:</h1>
+<p id = "demo1"></p>
+<h1>After Modification:</h1>
+<p id = "demo2"></p>
+<script>
+var myObj, x = "",i;
+myObj = {
+"name":"John",
+"age":30,
+"car":"BMW"
+};
+for(i in myObj)
+{
+x = x + myObj[i] + "<br>";
+}
+document.getElementById("demo1").innerHTML = x;
+x = "";
+myObj.name = "Hello User!!!";
+for(i in myObj)
+{
+x = x + myObj[i] + "<br>";
+}
+document.getElementById("demo2").innerHTML = x;
+</script>
+</body>
+</html>
+Output:
+
+c. Persing JSON
+Code:
+index.html
+<html>
+<head>
+<title>The JSON Example</title>
+</head>
+<body>
+<p>Create Object from JSON String</p>
+<p id = "demo"></p>
+<script>
+var txt = '{"name":"John" , "age":30 , "car":"BMW"}'
+var obj = JSON.parse(txt);
+document.getElementById("demo").innerHTML = obj.name + " , " + obj.age + " ,
+" + obj.car;
+</script>
+</body>
+</html>

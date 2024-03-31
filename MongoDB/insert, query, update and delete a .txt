@@ -1,0 +1,38 @@
+insert, query, update and delete a document.
+
+
+To Insert Document –
+db.COLLECTION_NAME.insert(document)
+To Query Document –
+db.COLLECTION_NAME.find()
+To Update Document –
+db.COLLECTION_NAME.update(SELECTION_CRITERIA,UPDATED DATA)
+To Delete Document –
+db.COLLECTION_NAME.remove(DELETION_CRITERIA)
+Source Code –
+use examdb
+db.createCollection(“student”)
+db.student.insert({Name:“S1”, Gender: “M”, Class: “C1”, Score: 95, Age: 25})
+db.student.insert({Name:“S2”, Gender: “M”, Class: “C1”, Score: 85, Age: 18})
+var d = [
+{Name:“S3”, Gender: “F”, Class: “C1”, Score: 85, Age: 18},
+{Name:“S4”, Gender: “F”, Class: “C1”, Score: 75, Age: 18},
+{Name:“S5”, Gender: “F”, Class: “C2”, Score: 75, Age: 18},
+{Name:“S6”, Gender: “M”, Class: “C2”, Score: 100, Age: 21},
+{Name:“S7”, Gender: “M”, Class: “C2”, Score: 100, Age: 21},
+{Name:“S8”, Gender: “F”, Class: “C2”, Score: 100, Age: 25},
+{Name:“S9”, Gender: “F”, Class: “C2”, Score: 90, Age: 25},
+{Name:“S10”, Gender: “F”, Class: “C3”, Score: 90, Age: 28},
+{Name:“Student1”, Gender: “M”, Class: “Biology”, Score: 90, Age: 30},
+{Name:“Student2”, Gender: “M”, Class: “Chemistry”, Score: 90, Age: 30},
+{Name:“Test1”, Gender: “M”, Class: “Chemistry”, Score: 90, Age: 30},
+{Name:“Test2”, Gender: “M”, Class: “Chemistry”, Score: 90, Age: 30},
+{Name:“Test3”, Gender: “M”, Class: “Chemistry”, Score: 90, Age: 30},
+{Name:“Test4”, Gender: “F”, Class: “Chemistry”, Score: 90, Age: 30},
+];
+db.student.insert(d)
+db.student.find()
+db.student.update({name:“S1”},{$set:{name:“MSC_DS”}})
+db.stdent.find()
+db.student.remove({name:“Test4”})
+db.student.find()

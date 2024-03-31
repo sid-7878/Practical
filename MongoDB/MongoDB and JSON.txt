@@ -1,0 +1,110 @@
+MongoDB and JSON
+
+a. Create a JSON file and import it to MongoDB
+Steps:
+1. Open a Text editor like Notepad, Visual Studio Code.
+2. Type following data:
+[
+{
+"id": 1,
+"name": "John Deo",
+"class": "Four",
+"mark": 75,
+"gender": "female"
+},
+{
+"id": 2,
+"name": "Max Ruin",
+"class": "Three",
+"mark": 85,
+"gender": "male"
+},
+{
+"id": 3,
+"name": "Arnold",
+"class": "Three",
+"mark": 55,
+"gender": "male"
+},
+{
+"id": 4,
+"name": "Krish Star",
+"class": "Four",
+"mark": 60,
+"gender": "female"
+},
+{
+"id": 5,
+"name": "John Mike",
+"class": "Four",
+"mark": 60,
+"gender": "female"
+},
+{
+"id": 6,
+"name": "Alex John",
+"class": "Four",
+"mark": 55,
+"gender": "male"
+},
+{
+"id": 7,
+"name": "My John Rob",
+"class": "Fifth",
+"mark": 78,
+"gender": "male"
+},
+{
+"id": 8,
+"name": "Asruid",
+"class": "Five",
+"mark": 85,
+"gender": "male"
+},
+{
+"id": 9,
+"name": "Tes Qry",
+"class": "Six",
+"mark": 78,
+"gender": "male"
+},
+{
+"id": 10,
+"name": "Big John",
+"class": "Four",
+"mark": 55,
+"gender": "female"
+}
+]
+
+3. Save the file with the extension of .json. Here we have to give the name to the file as student.json
+
+4. Now open Windows Command Prompt (cmd) and type following command.
+Note: Search cmd then right click on that and select option ‘Run as Administrator’.
+> cd\
+> cd " C:\Program Files\MongoDB\Server\4.2\bin"
+> mongoimport --db studentDB --collection student --file student.json --jsonArray
+After that it will give output that your all documents imported successfully.
+
+5. Open MongoDB Console. Execute following commands:
+> show dbs
+> use studntDB
+> show collections
+> db.student.find()
+Output:
+
+b. Export MongoDB to JSON.
+Reference Link -
+https://www.nielit.gov.in/gorakhpur/sites/default/files/Gorakhpur/ALEVEL_1_DBTECH_08_June_2020_I
+L.pdf
+
+Steps:
+1. Open Windows Command Prompt (cmd) and type following command.
+Note: Search cmd then right click on that and select option ‘Run as Administrator’.
+> cd\
+> cd " C:\Program Files\MongoDB\Server\4.2\bin"
+> mongoexport --db StudentDB --collection student --type=json --out
+E:\sampleResult.json
+After that it will give output that your all documents imported successfully
+
+2. You can check your JSON file as you specified directory in above command

@@ -1,0 +1,12 @@
+create,display and drop collection.
+Create –
+db.createCollection(collection_name)
+Display –
+Show collections
+Drop –
+db.collection_name.drop()
+Source Code:
+use examdb
+db.createCollection(“student”)
+show collections
+db.student.drop()
